@@ -52,6 +52,27 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>2.4</version>
+    <configuration>
+        <descriptors>
+            <!-- 위에서 작성한 파일명 기술 -->
+            <descriptor>assembly-desc-bin.xml</descriptor>
+        </descriptors>
+    </configuration>
+    <executions>
+        <execution>
+            <id>bin</id>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+        </execution>
+    </executions>
+ </plugin>
 		</plugins>
 	</build>
 
